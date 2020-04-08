@@ -50,6 +50,12 @@ module.exports = {
   ],
 
   theme: {
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+    },
     extend: {
       colors: {
         'accent-1': '#FAFAFA',
@@ -74,12 +80,12 @@ module.exports = {
         '8xl': '6.25rem',
       },
       fontFamily: {
-        title: 'IMFrench',
-        text: 'Poppins',
+        'title': 'IMFrench',
+        'text': 'Poppins',
       },
       backgroundColor: {
-        content: '#dfece9',
-        nav: '#f7f3ed',
+        'content': '#dfece9',
+        'nav': '#f7f3ed',
       },
       boxShadow: {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',

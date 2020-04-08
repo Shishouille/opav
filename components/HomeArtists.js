@@ -1,22 +1,25 @@
 import Link from 'next/link';
 import React from 'react';
+import CoverImage from './cover-image';
 
 const HomeArtists = ({
   slug,
   name,
   category,
   excerpt,
-  // image,
+  image,
   spectacle,
 }) => (
   <div>
-    <figure>
+    <figure className="md:w-full">
       <Link as={`/artists/${slug}`} href="/artists/[artist]">
         <a href="">
-          {/* <img src="" alt="" /> */}
-          <h2>{name}</h2>
-          <h3>{category}</h3>
-          <h3>{spectacle}</h3>
+        <CoverImage
+            title={name}
+            responsiveImage={image.responsiveImage}
+          />
+          <h2 className="text-center">{name} - {category}</h2>
+          <h3 className="text-center">{spectacle}</h3>
         </a>
       </Link>
     </figure>

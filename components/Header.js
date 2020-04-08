@@ -9,50 +9,52 @@ const Header = () => {
     <menu className="min-w-screen flex flex-col flex-no-wrap justify-between px-0 my-0">
       <div className="">
         <div>
-          <img className= "w-12 mx-auto my-3" src="https://www.datocms-assets.com/25425/1586349853-logo-opera.jpg" alt="Logo" />
+        <Link href="/">
+          <a><img className= "w-12 mx-auto my-3" src="https://www.datocms-assets.com/25425/1586349853-logo-opera.jpg" alt="Logo" /></a>
+        </Link>
         </div>
         <nav className="flex justify-between">
           <div className="w-full">
-            <p className="nav border-r-2 border-orange-500 text-center bg-orange-100" onClick={()=> setOpenSpectacles(true)}>
+            <p className="nav border-r-2 border-orange-500 text-center bg-orange-100 cursor-pointer" onClick={()=> setOpenSpectacles(!openSpectacles)}>
               Spectacles
             </p>
             {openSpectacles
           && (
             <div>
-              <div alt="Fermer la fenêtre" onClick={() => setOpenSpectacles(false)} />
+              <div alt="Fermer la fenêtre" onClick={() => setOpenSpectacles(!openSpectacles)} />
               <div>
-                <Link href="/">Programmation</Link>
+                <Link href="/spectacles">Programmation</Link>
               </div>
-              <div>
+              {/* <div>
                 <Link href="/">Billeterie</Link>
-              </div>
+              </div> */}
               <div>
-                <Link href="/">Abonnement</Link>
+                <Link href="/">Abonnements</Link>
               </div>
-              <div>
+              {/* <div>
                 <Link href="/">Services & Infos Pratiques</Link>
-              </div>
+              </div> */}
             </div>
           )}
           </div>
 
           <div className="w-full">
-            <p className="nav border-l-2 border-orange-500 text-center bg-orange-100" onClick={()=> setOpenOpera(true)}>L'Opéra</p>
+            <p className="nav border-l-2 border-orange-500 text-center bg-orange-100 cursor-pointer" onClick={()=> setOpenOpera(!openOpera)}>L'Opéra</p>
             {openOpera
           && (
-            <div>
+            <div className="text-right">
               <div>
                 <Link href="/">Visiter</Link>
               </div>
-              <div>
+              {/* <div>
                 <Link href="/">Histoire de l'Opéra</Link>
-              </div>
+              </div> */}
               <div>
-                <Link href="/">Artites</Link>
+                <Link href="/artists">Artistes</Link>
               </div>
-              <div>
+              {/* <div>
                 <Link href="/">Formation & Transmission</Link>
-              </div>
+              </div> */}
             </div>
           )}
           </div>
@@ -60,35 +62,43 @@ const Header = () => {
       </div>
       <div>
         <nav>
-          <div className="flex justify-between">
-            <Link href="/">
+          {/* <div className="flex justify-between">
+            <p className="text-gray-700">
               Soutenez-nous
-            </Link>
-            <Link href="/">
+            </p>
+            <p className="text-gray-700">
               Octave Magazine
-            </Link>
-            <Link href="/">
+            </p>
+            <p className="text-gray-700">
               Boutique
-            </Link>
-            <Link href="/">
+            </p>
+            <p className="text-gray-700">
               3è Scène
-            </Link>
-          </div>
-          <div>
-            <p>
+            </p>
+          </div> */}
+          <div className="flex justify-end">
+            <img src="" alt="Recherche" onClick={()=> setOpenSearch(true)} />
+            <p className="mx-5">
               FR
             </p>
-            <p>
+            {/* <p className="mx-5 text-gray-700">
               EN
-            </p>
-            <img src="" alt="Recherche" onClick={()=> setOpenSearch(true)} />
-            {openSearch
-          && (
-            <div>
-              <input type="text" />
-            </div>
-          )}
+            </p> */}
           </div>
+          {openSearch
+          && (
+            <form className="w-screen max-w-sm">
+              <div className="flex items-center border-b border-b-2 border-teal-500 py-2">
+                <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Recherche..." aria-label="Chercher" />
+                <button className="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
+                  Valider
+                </button>
+                <button onClick={()=> setOpenSearch(false)} className="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
+                  Annuler
+                </button>
+              </div>
+            </form>
+          )}
         </nav>
       </div>
     </menu>

@@ -1,4 +1,5 @@
 import React from 'react';
+import CoverImage from './cover-image';
 import Link from 'next/link';
 
 const SpectaclesList = ({
@@ -7,23 +8,31 @@ const SpectaclesList = ({
   title,
   toDate,
   fromDate,
-  // image,
+  image,
   compositor,
   category,
-}) => (
-  <ul>
+}) => {
+  return(
     <li>
       <Link as={`/spectacles/${slug}`} href="/spectacles/[spectacle]">
         <a href="">
-        {/* <img src={image.basename} alt={image.alt} /> */}
-        <span>{category}</span>
-        <span>{title}</span>
-        <span>{compositor}</span>
-        <span>Du {fromDate} au {toDate} </span>
+        <div className="flex flex-col justify-center items-center">
+        <h2 className="">{category}</h2>
+          <CoverImage
+            title={title}
+            responsiveImage={image.responsiveImage}
+          />
+        <figure className="text-center">
+          <h2 className="title">{title}</h2>
+          <h3 className="subtitle">{compositor}</h3>
+          <p>Du {fromDate}</p>
+          <p>au {toDate} </p>
+        </figure>
+        </div>
         </a>
       </Link>
     </li>
-  </ul>
 );
+  };
 
 export default SpectaclesList;

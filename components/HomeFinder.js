@@ -4,7 +4,7 @@ import Link from 'next/link';
 const HomeFinder = () => {
   return (
     <div>
-    <h2 className="text-center">
+    <h2 className="title text-center">
       Trouver un Spectacle
     </h2>
       <div>

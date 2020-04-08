@@ -1,18 +1,27 @@
 import React from 'react';
 import { getAllArtists } from '../lib/api';
+
+import Layout from '../components/layout';
 import ArtistsList from '../components/ArtistsList';
+
 
 const Artists = ({ allArtists }) => {
   const artist = allArtists[0];
   console.log(allArtists);
   return (
-    <ArtistsList
-    id={artist.id}
-    slug={artist.slug}
-    name={artist.name}
-    category={artist.category.name}
-    image={artist.image}
-    />
+    <Layout>
+    <ul className="flex flex-col justify-center md:justify-around md:flex-row ">
+      {allArtists.map((artist) => (
+        <ArtistsList
+          key={artist.id}
+          slug={artist.slug}
+          name={artist.name}
+          category={artist.category.name}
+          image={artist.image}
+        />      
+      ))}
+    </ul>
+    </Layout>
   );
 };
 export default Artists;

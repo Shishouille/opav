@@ -4,7 +4,6 @@ import Head from 'next/head';
 import React from 'react';
 
 import ArtistPage from '../../components/ArtistPage';
-import Container from '../../components/container';
 import Layout from '../../components/layout';
 
 import { getArtistbySlug, getAllArtistsWithSlug } from '../../lib/api';
@@ -17,7 +16,6 @@ const Artist = ({ artist, preview }) => {
   }
   return (
     <Layout preview={preview}>
-    <Container>
       {router.isFallback ? (
         <PostTitle>Loading…</PostTitle>
       ) : (
@@ -27,7 +25,6 @@ const Artist = ({ artist, preview }) => {
               <title>
                 {artist.name} | Opéra de Paris
               </title>
-              {/* <meta property="og:image" content={spectacle.ogImage.url} /> */}
             </Head>
             <ArtistPage
               id={artist.id}
@@ -43,7 +40,6 @@ const Artist = ({ artist, preview }) => {
           </article>
         </>
       )}
-    </Container>
   </Layout>
   );
 };

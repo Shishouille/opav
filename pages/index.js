@@ -4,11 +4,10 @@ import Layout from '../components/layout';
 import News from '../components/HomeNews';
 import Artists from '../components/HomeArtists';
 import Finder from '../components/HomeFinder';
-import MagLetter from '../components/HomeMagLetter';
+// import MagLetter from '../components/HomeMagLetter';
 import { getAllArtistsHomePage } from '../lib/api';
 
 export default function Index({ allArtists }) {
-  const artist = allArtists[0];
   return (
     <>
       <Layout>
@@ -16,17 +15,22 @@ export default function Index({ allArtists }) {
           <title>Opéra de Paris</title>
         </Head>
         <News />
-        <h2 className="text-center my-5"> Sélection d'artistes</h2>
-        <Artists
+        <h2 className="title text-center my-5"> Sélection d'artistes</h2>
+        <div className="md:flex">
+        {allArtists.map((artist) => (
+          <Artists
           slug={artist.slug}
           name={artist.name}
           category={artist.category.name}
           excerpt={artist.excerpt}
           image={artist.image}
           spectacle={artist.spectacle.title}
-        />
+        /> 
+        )
+        )}
+        </div>
         <Finder />
-        <MagLetter />
+        {/* <MagLetter /> */}
       </Layout>
     </>
   );
