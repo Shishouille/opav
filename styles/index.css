@@ -1,5 +1,13 @@
 /* purgecss start ignore */
 @tailwind base;
+
 @tailwind components;
+
+@font-face {
+  font-family: 'DancingScript';
+      src: url('/fonts/DancingScript-Regular.ttf');
+      src: url('/fonts/DancingScript-Bold.ttf');
+      src: url('/fonts/DancingScript-Medium.ttf');
+}
 /* purgecss end ignore */
 @tailwind utilities;

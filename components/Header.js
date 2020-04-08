@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 const Header = () => {
   const [openSpectacles, setOpenSpectacles] = useState(false);
   const [openOpera, setOpenOpera] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
   return (
-    <menu>
-      <div>
+    <menu className="min-w-screen flex justify-between">
+      <div className="">
         <div>
           <img src="" alt="" />
         </div>
@@ -81,8 +81,8 @@ const Header = () => {
             <p>
               EN
             </p>
-            <img src="" alt="Recherche" onClick={()=> setOpen(true)} />
-            {open
+            <img src="" alt="Recherche" onClick={()=> setOpenSearch(true)} />
+            {openSearch
           && (
             <div>
               <input type="text" />

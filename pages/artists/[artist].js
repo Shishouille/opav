@@ -1,71 +1,71 @@
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import ErrorPage from 'next/error';
-import Container from '../../components/container';
-import Layout from '../../components/layout';
-// import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import PostTitle from '../../components/post-title';
-import PostHeader from '../../components/post-header';
-import { CMS_NAME } from '../../lib/constants';
-import markdownToHtml from '../../lib/markdownToHtml';
-import SectionSeparator from '../../components/section-separator';
+import React from 'react';
 
-export default function Post({ post, morePosts, preview }) {
+import { getArtistbySlug, getAllArtistsWithSlug } from '../../lib/api';
+import markdownToHtml from '../../lib/markdownToHtml';
+
+const Artist = ({ artist, preview }) => {
   const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
+  console.log(artist)
+  if (!router.isFallback && !artist?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return (
     <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-            </article>
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
-      </Container>
-    </Layout>
+    <Container>
+      {router.isFallback ? (
+        <PostTitle>Loading…</PostTitle>
+      ) : (
+        <>
+          <article>
+            <Head>
+              <title>
+                {post.title} | Next.js Blog Example with {CMS_NAME}
+              </title>
+              <meta property="og:image" content={post.ogImage.url} />
+            </Head>
+            <PostHeader
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              author={post.author}
+            />
+            <PostBody content={post.content} />
+          </article>
+          <SectionSeparator />
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </>
+      )}
+    </Container>
+  </Layout>
   );
-}
+};
 
-export async function getStaticProps({ params, preview }) {
-  const data = await getPostAndMorePosts(params.slug, preview);
-  const content = await markdownToHtml(data?.post?.content || '');
+export default Artist;
 
+
+export async function getStaticProps({ params }) {
+  const data = await getArtistbySlug(params.artist);
+  // const content = await markdownToHtml(data?.content || '');
   return {
     props: {
-      preview,
-      post: {
-        ...data?.post,
-        content,
+      artist: {
+        ...data,
+        // content,
       },
-      morePosts: data?.morePosts,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const allPosts = await getAllPostsWithSlug();
+  const artists = await getAllArtistsWithSlug();
+  const params = artists?.map((artist) =>
+    ({ params: { artist: artist.slug } })
+  );
+
   return {
-    paths: allPosts?.map((post) => `/posts/${post.slug}`) || [],
+    paths: params,
     fallback: true,
   };
 }

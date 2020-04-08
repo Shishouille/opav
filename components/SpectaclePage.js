@@ -1,17 +1,29 @@
 import React from 'react';
 
 const SpectaclePage = ({
+  id,
+  title,
+  location,
+  lang,
+  category,
+  content,
+  image,
+  credits,
+  fromDate,
+  toDate,
+  time,
+  firstSpectacle,
 }) => {
   return (
     <main>
-      <h1>Nom</h1>
+      <h1>{title}</h1>
       <div>
-        <img src="" alt="Photo" />
-        <p>Crédits</p>
+        {/* <img src="" alt="Photo" /> */}
+        <p>{credits}</p>
       </div>
       <div>
         <span>Tag (Nouveau)</span>
-        <h2>Type</h2>
+        <h2>{category}</h2>
         <h2>Réalisateur</h2>
       </div>
       <div>
@@ -20,23 +32,23 @@ const SpectaclePage = ({
       </div>
       <div>
         <h3>Lieu</h3>
-        <h3>Du .. Au ..</h3>
+        <h3>Du {fromDate} Au {toDate}</h3>
       </div>
       <div>
         <div>
-          <h3>Durée</h3>
+          <h3>{time}</h3>
         </div>
         <div>
-          <h3>Langue</h3>
+          <h3>{lang}</h3>
           <h3>Surtitrage</h3>
         </div>
         <div>
-          <h3>Première</h3>
+          <h3>{firstSpectacle}</h3>
         </div>
       </div>
       <div>
         <h3>A propos</h3>
-        <p>Contenu</p>
+        <p>{content}</p>
       </div>
     </main>
   );

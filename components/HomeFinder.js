@@ -11,7 +11,8 @@ const HomeFinder = () => {
     <select name="" id="">
       <option value="">Tous les prix</option>
     </select>
-    <p> Voir le calendrier</p>
+    <button>Coucou</button>
+    <p className="btn btn-blue"> Voir le calendrier</p>
     <Link href="/"> Lancer La Recherche</Link>
     </div>
   )

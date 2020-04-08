@@ -13,7 +13,7 @@ const SpectaclesList = ({
 }) => (
   <ul>
     <li>
-      <Link as={`/spectacles/${slug}`} href="/spectacles/[slug]">
+      <Link as={`/spectacles/${slug}`} href="/spectacles/[spectacle]">
         <a href="">
         {/* <img src={image.basename} alt={image.alt} /> */}
         <span>{category}</span>
