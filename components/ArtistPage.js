@@ -1,26 +1,34 @@
 import React from 'react';
+import Link from 'next/link';
 
-const ArtistPage = () => (
+const ArtistPage = ({
+  id,
+  slug,
+  name,
+  excerpt,
+  category,
+  content,
+  image,
+  credits,
+  spectacle
+}) => (
   <main>
     <div>
-      <h1>Artiste</h1>
-      <h2>Catégorie</h2>
-      <h3>Récompenses</h3>
+      <h1>{name}</h1>
+      <h2>{category}</h2>
+      <h3>{excerpt}</h3>
     </div>
     <div>
-      <img src="" alt="" />
-      <p>Crédits</p>
+      {/* <img src="" alt="" /> */}
+      <p>{credits}</p>
     </div>
     <div>
-      <p>Sa biographie</p>
+      <p>{content}</p>
     </div>
     <div>
       <h3>A retrouver dans</h3>
-      <Link href="/">
-        Opéra
-      </Link>
-      <Link href="/">
-        Opéra
+      <Link as={`/spectacles/${spectacle.slug}`} href="/spectacles/[spectacle]">
+        {spectacle.title}
       </Link>
     </div>
   </main>

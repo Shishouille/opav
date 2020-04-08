@@ -6,14 +6,14 @@ const Header = () => {
   const [openOpera, setOpenOpera] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
   return (
-    <menu className="min-w-screen flex justify-between">
+    <menu className="min-w-screen flex flex-col flex-no-wrap justify-between px-0 my-0">
       <div className="">
         <div>
-          <img src="" alt="" />
+          <img className= "w-12 mx-auto my-3" src="https://www.datocms-assets.com/25425/1586349853-logo-opera.jpg" alt="Logo" />
         </div>
-        <nav>
-          <div>
-            <p onClick={()=> setOpenSpectacles(true)}>
+        <nav className="flex justify-between">
+          <div className="w-full">
+            <p className="nav border-r-2 border-orange-500 text-center bg-orange-100" onClick={()=> setOpenSpectacles(true)}>
               Spectacles
             </p>
             {openSpectacles
@@ -21,7 +21,7 @@ const Header = () => {
             <div>
               <div alt="Fermer la fenêtre" onClick={() => setOpenSpectacles(false)} />
               <div>
-                <Link href="/"> Programmation</Link>
+                <Link href="/">Programmation</Link>
               </div>
               <div>
                 <Link href="/">Billeterie</Link>
@@ -36,8 +36,8 @@ const Header = () => {
           )}
           </div>
 
-          <div>
-            <p onClick={()=> setOpenOpera(true)}>L'Opéra</p>
+          <div className="w-full">
+            <p className="nav border-l-2 border-orange-500 text-center bg-orange-100" onClick={()=> setOpenOpera(true)}>L'Opéra</p>
             {openOpera
           && (
             <div>
@@ -60,7 +60,7 @@ const Header = () => {
       </div>
       <div>
         <nav>
-          <div>
+          <div className="flex justify-between">
             <Link href="/">
               Soutenez-nous
             </Link>

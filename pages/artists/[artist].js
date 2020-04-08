@@ -1,13 +1,17 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
+import Head from 'next/head';
 import React from 'react';
+
+import ArtistPage from '../../components/ArtistPage';
+import Container from '../../components/container';
+import Layout from '../../components/layout';
 
 import { getArtistbySlug, getAllArtistsWithSlug } from '../../lib/api';
 import markdownToHtml from '../../lib/markdownToHtml';
 
 const Artist = ({ artist, preview }) => {
   const router = useRouter();
-  console.log(artist)
   if (!router.isFallback && !artist?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -21,20 +25,22 @@ const Artist = ({ artist, preview }) => {
           <article>
             <Head>
               <title>
-                {post.title} | Next.js Blog Example with {CMS_NAME}
+                {artist.name} | Opéra de Paris
               </title>
-              <meta property="og:image" content={post.ogImage.url} />
+              {/* <meta property="og:image" content={spectacle.ogImage.url} /> */}
             </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
+            <ArtistPage
+              id={artist.id}
+              slug={artist.slug}
+              name={artist.name}
+              category={artist.category.name}
+              excerpt={artist.excerpt}
+              content={artist.content}
+              image={artist.image}
+              credits={artist.credits}
+              spectacle={artist.spectacle}
             />
-            <PostBody content={post.content} />
           </article>
-          <SectionSeparator />
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </>
       )}
     </Container>

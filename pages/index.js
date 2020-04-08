@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import Container from '../components/container';
 import Layout from '../components/layout';
 import News from '../components/HomeNews';
 import Artists from '../components/HomeArtists';
@@ -16,19 +15,18 @@ export default function Index({ allArtists }) {
         <Head>
           <title>Opéra de Paris</title>
         </Head>
-        <Container>
-          <News />
-          <Artists
-            slug={artist.slug}
-            name={artist.name}
-            category={artist.category.name}
-            excerpt={artist.excerpt}
-            image={artist.image}
-            spectacle={artist.spectacle.title}
-          />
-          <Finder />
-          <MagLetter />
-        </Container>
+        <News />
+        <h2 className="text-center my-5"> Sélection d'artistes</h2>
+        <Artists
+          slug={artist.slug}
+          name={artist.name}
+          category={artist.category.name}
+          excerpt={artist.excerpt}
+          image={artist.image}
+          spectacle={artist.spectacle.title}
+        />
+        <Finder />
+        <MagLetter />
       </Layout>
     </>
   );
@@ -39,4 +37,4 @@ export async function getStaticProps({ preview }) {
   return {
     props: { allArtists },
   };
-};
+}

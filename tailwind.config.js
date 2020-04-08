@@ -27,11 +27,24 @@ module.exports = {
 
       addComponents(buttons);
     }),
+    plugin(({ addComponents, config }) => {
+      const title = {
+        '.title': {
+          fontSize: '2em',
+          color: '#ab2128',
+          fontFamily: config('theme.fontFamily.title'),
+        },
+        '.subtitle': {
+          fontSize: '1.5em',
+          color: '#b38a4d',
+        },
+      };
+
+      addComponents(title);
+    }),
     plugin(({ addBase, config }) => {
       addBase({
-        h1: { fontSize: config('theme.fontSize.8xl'), color: config('theme.colors.success'), fontFamily: config('theme.fontFamily.opera')},
-        h2: { fontSize: config('theme.fontSize.7xl') },
-        h3: { fontSize: config('theme.fontSize.5xl') },
+        p: { fontFamily: config('theme.fontFamily.text') },
       });
     }),
   ],
@@ -61,7 +74,12 @@ module.exports = {
         '8xl': '6.25rem',
       },
       fontFamily: {
-        opera: 'DancingScript',
+        title: 'IMFrench',
+        text: 'Poppins',
+      },
+      backgroundColor: {
+        content: '#dfece9',
+        nav: '#f7f3ed',
       },
       boxShadow: {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',

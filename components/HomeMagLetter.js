@@ -3,7 +3,7 @@ import React from 'react';
 
 const HomeMagLetter = () => {
   return (
-    <div>
+    <div className="flex text-center justify-between">
       <div>
         <h2>Octave Magazine</h2>
         <img src="" alt=""/>
