@@ -14,7 +14,7 @@ const HomeArtists = ({
     <figure className="md:w-full">
       <Link as={`/artists/${slug}`} href="/artists/[artist]">
         <a href="">
-        <CoverImage
+          <CoverImage
             title={name}
             responsiveImage={image.responsiveImage}
           />

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import ArtistPage from '../../components/ArtistPage';
+import Loader from '../../components/Loader';
 import Layout from '../../components/layout';
 
 import { getArtistbySlug, getAllArtistsWithSlug } from '../../lib/api';
@@ -17,7 +18,7 @@ const Artist = ({ artist, preview }) => {
   return (
     <Layout preview={preview}>
       {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
+        <Loader />
       ) : (
         <>
           <article>

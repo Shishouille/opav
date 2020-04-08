@@ -17,17 +17,16 @@ export default function Index({ allArtists }) {
         <News />
         <h2 className="title text-center my-5"> Sélection d'artistes</h2>
         <div className="md:flex">
-        {allArtists.map((artist) => (
-          <Artists
-          slug={artist.slug}
-          name={artist.name}
-          category={artist.category.name}
-          excerpt={artist.excerpt}
-          image={artist.image}
-          spectacle={artist.spectacle.title}
-        /> 
-        )
-        )}
+          {allArtists.map((artist) => (
+            <Artists
+              slug={artist.slug}
+              name={artist.name}
+              category={artist.category.name}
+              excerpt={artist.excerpt}
+              image={artist.image}
+              spectacle={artist.spectacle.title}
+            />
+          ))}
         </div>
         <Finder />
         {/* <MagLetter /> */}

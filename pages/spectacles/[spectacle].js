@@ -5,6 +5,7 @@ import ErrorPage from 'next/error';
 import Head from 'next/head';
 
 import SpectaclePage from '../../components/SpectaclePage';
+import Loader from '../../components/Loader';
 import Container from '../../components/container';
 import Layout from '../../components/layout';
 
@@ -20,7 +21,7 @@ const Spectacle = ({ spectacle, preview }) => {
     <Layout preview={preview}>
       <Container>
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <Loader />
         ) : (
           <>
             <article>

@@ -11,16 +11,16 @@ const Spectacles = ({ allSpectacles }) => {
     <Layout>
       <h1 className="title text-center">Représentations</h1>
       <ul>
-    <SpectaclesList
-      id={spectacle.id}
-      slug={spectacle.slug}
-      title={spectacle.title}
-      toDate={spectacle.toDate}
-      fromDate={spectacle.fromDate}
-      image={spectacle.image}
-      compositor={spectacle.compositor.name}
-      category={spectacle.category.name}
-    />
+        <SpectaclesList
+          id={spectacle.id}
+          slug={spectacle.slug}
+          title={spectacle.title}
+          toDate={spectacle.toDate}
+          fromDate={spectacle.fromDate}
+          image={spectacle.image}
+          compositor={spectacle.compositor.name}
+          category={spectacle.category.name}
+        />
       </ul>
     </Layout>
   );
