@@ -13,15 +13,15 @@ import DayEvent from '../../components/DayEvent';
 import { getCalendarSpectacles } from '../../lib/api';
 
 
-const Spectacle = ({ calendar, preview }) => {
+const Calendar = ({ calendar, preview }) => {
   const router = useRouter();
   const monthSpectacles = Object.values(calendar);
   const currentYear = monthSpectacles[0].year;
-  // const CYN1 = +currentYear + 1;
-  // const CYN0 = +currentYear - 1;
-  // if (!router.isFallback && !currentYear) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
+  const CYN1 = +currentYear + 1;
+  const CYN0 = +currentYear - 1;
+  if (!router.isFallback && !currentYear) {
+    return <ErrorPage statusCode={404} />;
+  }
   return (
     <Layout preview={preview}>
       <Container>
@@ -31,15 +31,15 @@ const Spectacle = ({ calendar, preview }) => {
           <>
             <article>
               <Head>
-                {/* <title>
+                <title>
                   {currentYear} | Opéra de Paris
-                </title> */}
+                </title>
                 {/* <meta property="og:image" content={spectacle.ogImage.url} /> */}
               </Head>
               <nav>
-                {/* <Link as={`/calendar/${CYN0}`} href="/calendar/[calendar]"><a>{CYN0}</a></Link> */}
+                <Link as={`/calendar/${CYN0}`} href="/calendar/[calendar]"><a>{CYN0}</a></Link>
                 <Link as={`/calendar/${currentYear}`} href="/calendar/[calendar]"><a>{+currentYear}</a></Link>
-                {/* <Link as={`/calendar/${CYN1}`} href="/calendar/[calendar]"><a>{CYN1}</a></Link> */}
+                <Link as={`/calendar/${CYN1}`} href="/calendar/[calendar]"><a>{CYN1}</a></Link>
               </nav>
               <h2>Janvier</h2>
               <h2>Frévrier</h2>
@@ -70,7 +70,7 @@ const Spectacle = ({ calendar, preview }) => {
   );
 };
 
-export default Spectacle;
+export default Calendar;
 
 
 export async function getStaticProps({ params }) {
