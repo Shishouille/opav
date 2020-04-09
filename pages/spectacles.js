@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React from 'react';
 import { getAllSpectacles } from '../lib/api';
 
@@ -6,6 +7,7 @@ import SpectaclesList from '../components/SpectaclesList';
 
 const Spectacles = ({ allSpectacles }) => {
   console.log(allSpectacles);
+  const router = useRouter();
   return (
     <Layout>
       <h2 className="title text-center">Représentations</h2>
