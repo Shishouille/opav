@@ -31,9 +31,9 @@ const Spectacle = ({ calendar, preview }) => {
           <>
             <article>
               <Head>
-                <title>
+                {/* <title>
                   {currentYear} | Opéra de Paris
-                </title>
+                </title> */}
                 {/* <meta property="og:image" content={spectacle.ogImage.url} /> */}
               </Head>
               <nav>
