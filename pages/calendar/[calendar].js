@@ -13,10 +13,9 @@ import DayEvent from '../../components/DayEvent';
 import { getCalendarSpectacles } from '../../lib/api';
 
 
-const Calendar = ({ calendar, preview }) => {
+const Spectacle = ({ calendar, preview }) => {
   const router = useRouter();
-  const monthSpectacles = Object.values(calendar);
-  const currentYear = monthSpectacles[0].year;
+  const currentYear = router.params;
   const CYN1 = +currentYear + 1;
   const CYN0 = +currentYear - 1;
   if (!router.isFallback && !currentYear) {
@@ -44,7 +43,7 @@ const Calendar = ({ calendar, preview }) => {
               <h2>Janvier</h2>
               <h2>Frévrier</h2>
               <h2>Mars</h2>
-              {monthSpectacles.map((day) => (
+              {Object.values(calendar).map((day) => (
                 <DayEvent
                   key={day.id}
                   spectacle={day.spectacle}
@@ -70,7 +69,7 @@ const Calendar = ({ calendar, preview }) => {
   );
 };
 
-export default Calendar;
+export default Spectacle;
 
 
 export async function getStaticProps({ params }) {
