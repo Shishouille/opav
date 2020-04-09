@@ -19,9 +19,9 @@ const Spectacle = ({ calendar, preview }) => {
   const currentYear = monthSpectacles[0].year;
   // const CYN1 = +currentYear + 1;
   // const CYN0 = +currentYear - 1;
-  if (!router.isFallback && !currentYear) {
-    return <ErrorPage statusCode={404} />;
-  }
+  // if (!router.isFallback && !currentYear) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
   return (
     <Layout preview={preview}>
       <Container>
