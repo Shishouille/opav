@@ -15,7 +15,7 @@ const ArtistPage = ({
 }) => (
   <main>
     <div>
-      <h1 className="title text-center">{name}</h1>
+      <h2 className="title text-center">{name}</h2>
     </div>
     <div className="flex flex-col justify-center md:flex-row">
     <div className="md:w-1/2">

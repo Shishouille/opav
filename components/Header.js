@@ -10,7 +10,7 @@ const Header = () => {
       <div className="">
         <div>
           <Link href="/">
-            <a><img className="w-12 mx-auto my-3" src="https://www.datocms-assets.com/25425/1586349853-logo-opera.jpg" alt="Logo" /></a>
+            <h1 className="cursor-pointer">Vive l'Opéra</h1>
           </Link>
         </div>
         <nav className="flex justify-between">
@@ -20,7 +20,7 @@ const Header = () => {
             </p>
             {openSpectacles
           && (
-            <div className="w-screen h-screen">
+            <div className="">
               <div alt="Fermer la fenêtre" onClick={() => setOpenSpectacles(!openSpectacles)} />
               <div>
                 <Link href="/spectacles">Programmation</Link>
@@ -29,7 +29,7 @@ const Header = () => {
                 <Link href="/">Billeterie</Link>
               </div> */}
               <div>
-                <Link href="/">Abonnements</Link>
+                <Link href="/subscriptions">Abonnements</Link>
               </div>
               {/* <div>
                 <Link href="/">Services & Infos Pratiques</Link>
@@ -44,7 +44,7 @@ const Header = () => {
           && (
             <div className="text-right">
               <div>
-                <Link href="/">Visiter</Link>
+                <Link href="/visits">Visiter</Link>
               </div>
               {/* <div>
                 <Link href="/">Histoire de l'Opéra</Link>

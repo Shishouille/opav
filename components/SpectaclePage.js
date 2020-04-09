@@ -16,7 +16,7 @@ const SpectaclePage = ({
   firstSpectacle,
 }) => (
   <main>
-    <h1 className="title text-center">{title}</h1>
+    <h2 className="title text-center">{title}</h2>
     <div>
       <CoverImage
         title={title}

@@ -5,22 +5,23 @@ import Layout from '../components/layout';
 import SpectaclesList from '../components/SpectaclesList';
 
 const Spectacles = ({ allSpectacles }) => {
-  const spectacle = allSpectacles[0];
-  console.log(spectacle);
+  console.log(allSpectacles);
   return (
     <Layout>
-      <h1 className="title text-center">Représentations</h1>
+      <h2 className="title text-center">Représentations</h2>
       <ul>
-        <SpectaclesList
-          id={spectacle.id}
-          slug={spectacle.slug}
-          title={spectacle.title}
-          toDate={spectacle.toDate}
-          fromDate={spectacle.fromDate}
-          image={spectacle.image}
-          compositor={spectacle.compositor.name}
-          category={spectacle.category.name}
-        />
+        {allSpectacles.map((spectacle) => (
+          <SpectaclesList
+            id={spectacle.id}
+            slug={spectacle.slug}
+            title={spectacle.title}
+            toDate={spectacle.toDate}
+            fromDate={spectacle.fromDate}
+            image={spectacle.image}
+            compositor={spectacle.compositor.name}
+            category={spectacle.category.name}
+          />
+        ))}
       </ul>
     </Layout>
   );
