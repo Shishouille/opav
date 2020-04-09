@@ -15,7 +15,7 @@ import { getCalendarSpectacles } from '../../lib/api';
 
 const Spectacle = ({ calendar, preview }) => {
   const router = useRouter();
-  const currentYear = router.params;
+  const currentYear = router.query.calendar;
   const CYN1 = +currentYear + 1;
   const CYN0 = +currentYear - 1;
   if (!router.isFallback && !currentYear) {

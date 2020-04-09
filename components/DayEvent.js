@@ -9,7 +9,6 @@ const DayEvent = ({
   month,
   year,
 }) => {
-  console.log(spectacle[0]);
   return (
     <div>
       <div>
