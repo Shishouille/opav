@@ -218,6 +218,20 @@ module.exports = {
           fontFamily: config('theme.fontFamily.title'),
           color: '#ab2128',
         },
+        '.border-right': {
+          borderRight: '1px solid black',
+          borderLeft: 'none',
+          paddingRight: '.5em',
+        },
+        '.no-border': {
+          border: 'none',
+        },
+        '.calendar-display': {
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginBottom: '2em',
+          padding: '.5em',
+        },
       };
       addComponents(spectacle);
     }),
@@ -275,8 +289,7 @@ module.exports = {
     }),
     plugin(({ addBase, config }) => {
       addBase({
-        p: { fontFamily: config('theme.fontFamily.text') },
-        a: { fontFamily: config('theme.fontFamily.text') },
+        body: { fontFamily: config('theme.fontFamily.text') },
         h1: { fontFamily: config('theme.fontFamily.text') },
       });
     }),

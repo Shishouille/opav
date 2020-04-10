@@ -8,30 +8,24 @@ const DayEvent = ({
   day,
   month,
   year,
-}) => {
-  return (
-    <div>
-      <div>
-        <Link as={`/spectacles/${spectacle[0].slug}`} href="/spectacles/[spectacle]">
-          <a>
-            <div>
-              <CoverImage
-              title={spectacle.title}
-              responsiveImage={spectacle[0].image.responsiveImage}
-            />
-            </div>
-            <div>
-              <h2>Le {day}/{month}/{year} </h2>
-              <h3>{spectacle[0].title}</h3>
-              <p>{spectacle[0].time}</p>
-              <p>{spectacle[0].location.name}</p>
-            </div>
-            <div />
-          </a>
-        </Link>
-      </div>
+}) => (
+  <div className=" artist-display md:w-1/3">
+    <div className="artist-portrait border-right w-1/3">
+      <Link as={`/spectacles/${spectacle[0].slug}`} href="/spectacles/[spectacle]">
+        <a href="">
+          <CoverImage
+            title={spectacle.title}
+            responsiveImage={spectacle[0].image.responsiveImage}
+          />
+          <h2 className="text-center">{day}/{month}/{year} </h2>
+        </a>
+      </Link>
     </div>
-  );
-};
+    <div className="artist-category no-border w-2/3">
+      <h3 className="text-center text-lg text-black">{spectacle[0].title} | {spectacle[0].time}</h3>
+      <p className="text-center mt-3 ">{spectacle[0].location.name}</p>
+    </div>
+  </div>
+);
 
 export default DayEvent;
