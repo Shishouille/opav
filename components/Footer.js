@@ -1,29 +1,28 @@
-import Container from './container';
-import { EXAMPLE_PATH } from '../lib/constants';
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <Container>
-        <div className="">
-          <h3 className="">
+    <div className="bg-accent-1 border-t border-accent-2 mt-10">
+      <footer className="footer-d">
+        <div className="p-2 md:w-1/2">
+          <h3 className="footer-title">
             Palais Garnier
           </h3>
           <div>
             <p>Place de l'Opéra</p>
             <p>75009 Paris</p>
           </div>
-          <h3 className="">
+        </div>
+        <div className="p-2 md:w-1/2 md:text-right md: border-l-2 border-black">
+          <h3 className="footer-title">
             Opéra Bastille
           </h3>
           <div>
             <p>Place de la Bastille</p>
             <p>75012 Paris</p>
           </div>
-          <div>
-            <p>3è Scène</p>
-            <a href="">Jetez un coup d'oeil</a>
-          </div>
+        </div>
+      </footer>
+      {/* <div>
           <div className="">
             <a
               className="mx-3 font-bold hover:underline"
@@ -37,8 +36,7 @@ export default function Footer() {
               Applications mobiles
             </a>
           </div>
-        </div>
-      </Container>
-    </footer>
+        </div> */}
+    </div>
   );
 }

@@ -4,65 +4,144 @@ import React, { useState } from 'react';
 const Header = () => {
   const [openSpectacles, setOpenSpectacles] = useState(false);
   const [openOpera, setOpenOpera] = useState(false);
-  const [openSearch, setOpenSearch] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+  // const [openSearch, setOpenSearch] = useState(false);
   return (
     <menu className="min-w-screen flex flex-col flex-no-wrap justify-between px-0 my-0">
-      <div className="">
-        <div>
-          <Link href="/">
-            <h1 className="cursor-pointer">Vive l'Opéra</h1>
-          </Link>
-        </div>
-        <nav className="flex justify-between">
-          <div className="w-full">
-            <p className="nav border-r-2 border-orange-500 text-center bg-orange-100 cursor-pointer" onClick={() => setOpenSpectacles(!openSpectacles)}>
-              Spectacles
-            </p>
-            {openSpectacles
+      {/* OPEN MODE */}
+      {openSpectacles
           && (
-            <div className="">
-              <div alt="Fermer la fenêtre" onClick={() => setOpenSpectacles(!openSpectacles)} />
-              <div>
-                <Link href="/spectacles">Programmation</Link>
-              </div>
+            <div className="menu-bg">
+              <Link href="/spectacles">
+                <a>
+                  <div className="bubble bubble-left">
+                    <div className="text-bubble">
+                      Spectacles
+                    </div>
+                  </div>
+                </a>
+              </Link>
               {/* <div>
                 <Link href="/">Billeterie</Link>
               </div> */}
-              <div>
-                <Link href="/subscriptions">Abonnements</Link>
-              </div>
+              <Link href="/subscriptions">
+                <a>
+                  <div className="bubble bubble-right">
+                    <div className="text-bubble">
+                      Abonnements
+                    </div>
+                  </div>
+                </a>
+              </Link>
               {/* <div>
                 <Link href="/">Services & Infos Pratiques</Link>
               </div> */}
+              <div className="close-bubble" onClick={() => setOpenSpectacles(!openSpectacles)}><p>Fermer</p></div>
             </div>
           )}
-          </div>
-
-          <div className="w-full">
-            <p className="nav border-l-2 border-orange-500 text-center bg-orange-100 cursor-pointer" onClick={() => setOpenOpera(!openOpera)}>L'Opéra</p>
-            {openOpera
+      {openOpera
           && (
-            <div className="text-right">
-              <div>
-                <Link href="/visits">Visiter</Link>
-              </div>
+            <div className="menu-bg">
+              <Link href="/visits">
+                <a>
+                  <div className="bubble bubble-left">
+                    <div className="text-bubble">
+                      Visiter
+                    </div>
+                  </div>
+                </a>
+              </Link>
               {/* <div>
                 <Link href="/">Histoire de l'Opéra</Link>
               </div> */}
-              <div>
-                <Link href="/artists">Artistes</Link>
-              </div>
+              <Link href="/artists">
+                <a>
+                  <div className="bubble bubble-right">
+                    <div className="text-bubble">
+                      Artistes
+                    </div>
+                  </div>
+                </a>
+              </Link>
               {/* <div>
                 <Link href="/">Formation & Transmission</Link>
               </div> */}
+              <div className="close-bubble" onClick={() => setOpenOpera(!openOpera)}><p>Fermer</p></div>
             </div>
           )}
+
+      {openMenu
+          && (
+            <div className="menu-bg">
+              <Link href="/visits">
+                <a>
+                  <div className="bubble bubble-left">
+                    <div className="text-bubble">
+                      Visiter
+                    </div>
+                  </div>
+                </a>
+              </Link>
+              <Link href="/artists">
+                <a>
+                  <div className="bubble bubble-right">
+                    <div className="text-bubble">
+                      Artistes
+                    </div>
+                  </div>
+                </a>
+              </Link>
+              <Link href="/spectacles">
+                <a>
+                  <div className="bubble bubble-left">
+                    <div className="text-bubble">
+                      Spectacles
+                    </div>
+                  </div>
+                </a>
+              </Link>
+              <Link href="/subscriptions">
+                <a>
+                  <div className="bubble bubble-right">
+                    <div className="text-bubble">
+                      Abonnements
+                    </div>
+                  </div>
+                </a>
+              </Link>
+              <div className="close-bubble" onClick={() => setOpenMenu(!openMenu)}><p>Fermer</p></div>
+            </div>
+          )}
+
+
+      {/* CLOSE MODE */}
+      <div className="nav-menu">
+        <div>
+          <Link href="/">
+            <h1 className="cursor-pointer nav-logo">Vive l'Opéra</h1>
+          </Link>
+        </div>
+        <nav className="flex justify-between md:hidden ">
+          <div className="w-full">
+            <p className="nav cursor-pointer" onClick={() => setOpenMenu(!openMenu)}>
+              Menu
+            </p>
+          </div>
+        </nav>
+        <nav className="hidden w-1/3 text-right md:flex md:justify-between">
+          <div className="w-full">
+            <p className="nav cursor-pointer" onClick={() => setOpenSpectacles(!openSpectacles)}>
+              Programmes
+            </p>
+          </div>
+          <div className="w-full">
+            <p className="nav cursor-pointer" onClick={() => setOpenOpera(!openOpera)}>L'Opéra</p>
           </div>
         </nav>
       </div>
       <div>
-        <nav>
-          {/* <div className="flex justify-between">
+        {/* <nav> */}
+        {/* <div className="flex justify-between">
             <p className="text-gray-700">
               Soutenez-nous
             </p>
@@ -76,15 +155,15 @@ const Header = () => {
               3è Scène
             </p>
           </div> */}
-          <div className="flex justify-end">
+        {/* <div className="flex justify-end">
             <img src="" alt="Recherche" onClick={() => setOpenSearch(true)} />
-            <p className="mx-5">
-              FR
-            </p>
-            {/* <p className="mx-5 text-gray-700">
+            <p className="mx-5"> */}
+        {/* FR
+            </p> */}
+        {/* <p className="mx-5 text-gray-700">
               EN
             </p> */}
-          </div>
+        {/* </div>
           {openSearch
           && (
             <form className="w-screen max-w-sm">
@@ -99,7 +178,7 @@ const Header = () => {
               </div>
             </form>
           )}
-        </nav>
+        </nav> */}
       </div>
     </menu>
   );

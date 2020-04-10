@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 const HomeFinder = () => {
-  const [minPrice, setMinPrice] = useState(10);
+  const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const [category, setCategory] = useState('opera');
+  const [category, setCategory] = useState('all');
 
   const handleChange = (event) => {
     setCategory(event.target.value);
@@ -31,12 +31,14 @@ const HomeFinder = () => {
     }
   };
   return (
-    <div>
-      <h2 className="title text-center">
-        Trouver un Spectacle
-      </h2>
-      <div>
-        <div className="inline-block relative w-full">
+    <div className="hd-finder">
+      <div className="hd-display hd-bubble">
+        <div className="text-bubble hd-text-bubble">
+          <h2 className="title text-center py-2">
+            Trouver un Spectacle
+          </h2>
+          <div>
+            {/* <div className="inline-block relative w-full">
           <select onChange={handleChangePrice} className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
             <option>Tous les Prix</option>
             <option value="10">10-50€</option>
@@ -62,12 +64,13 @@ const HomeFinder = () => {
           <button type="button" className="bg-white w-full hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
             Trouvez les spectacles
           </button>
-        </Link>
-        <button type="button" className="bg-white w-full hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-          <Link as="/calendar/2021" href="/calendar/[calendar]">Voir le calendrier </Link>
-        </button>
+        </Link> */}
+            <button type="button" className="hd-link font-bold">
+              <Link as="/calendar/2021" href="/calendar/[calendar]">Voir le calendrier </Link>
+            </button>
+          </div>
+        </div>
       </div>
-
     </div>
   );
 };

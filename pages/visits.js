@@ -13,8 +13,10 @@ const Spectacles = ({ allVisits }) => {
   return (
     <Layout>
       <h2 className="title text-center">Venez Visiter !</h2>
-      <button type="button" onClick={() => changeOpera(true)}>Palais Garnier</button>
-      <button type="button" onClick={() => changeOpera(false)}>Opéra Bastille</button>
+      <div className="flex justify-around w-screen my-5">
+      <button type="button" className="mx-2 text-xl md:text-3xl border-b-2 border-red-800" onClick={() => changeOpera(true)}>Palais Garnier</button>
+      <button type="button" className="mx-2 text-xl md:text-3xl border-b-2 border-red-800" onClick={() => changeOpera(false)}>Opéra Bastille</button>
+      </div>
       {opera && (
       <VisitPage
         id={garnier.id}

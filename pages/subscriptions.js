@@ -9,7 +9,7 @@ const Spectacles = ({ allSubscriptions }) => {
   console.log(allSubscriptions);
   return (
     <Layout>
-      <h2 className="title text-center">Nos Abonnements</h2>
+      <h2 className="artist-title title">Nos Abonnements</h2>
       {allSubscriptions.map((subscription) => (
         <SubscriptionPage
           id={subscription.id}

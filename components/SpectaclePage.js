@@ -22,40 +22,44 @@ const SpectaclePage = ({
         title={title}
         responsiveImage={image.responsiveImage}
       />
-      <p>{credits}</p>
+      <p className="mx-2">{credits}</p>
     </div>
-    <div>
-      {/* <span>Tag (Nouveau)</span> */}
-      <h2 className="subtitle">{category}</h2>
-      {/* <h2>Réalisateur</h2> */}
-    </div>
-    <div>
-      {/* <button type="button">En vente le ou acheter les billets</button>
+    <div className="mx-2">
+      <div>
+        {/* <span>Tag (Nouveau)</span> */}
+        <h2 className="subtitle">{category}</h2>
+        {/* <h2>Réalisateur</h2> */}
+      </div>
+      <div>
+        {/* <button type="button">En vente le ou acheter les billets</button>
         <h2>Retrouvez nos abonnements</h2> */}
-    </div>
-    <div>
-      {/* <h3>Lieu</h3> */}
-      <h3>Du {fromDate} Au {toDate}</h3>
-    </div>
-    <div>
-      <div>
-        <h2 className="subtitle">Durée</h2>
-        <h3>{time}</h3>
       </div>
       <div>
-        <h2 className="subtitle">Langue</h2>
-        <h3>{lang}</h3>
-        <h2 className="subtitle">Surtitrage</h2>
-        <h3 />
+        {/* <h3>Lieu</h3> */}
+        <h3>Du {fromDate} Au {toDate}</h3>
+      </div>
+      <div className="flex flex-col md:justify-center md:flex-row">
+        <div className="w-full">
+          <h2 className="spectacle-subtitle border-b-2 border-black">Durée</h2>
+          <p>{time}</p>
+        </div>
+        <div className="w-full">
+          <h2 className="spectacle-subtitle border-b-2 border-black">Langue</h2>
+          <p>{lang}</p>
+        </div>
+        <div className="w-full">
+          <h2 className="spectacle-subtitle border-b-2 border-black">Surtitrage</h2>
+          <p />
+        </div>
+        <div className="w-full">
+          <h2 className="spectacle-subtitle border-b-2 border-black">Première</h2>
+          <p>{firstSpectacle}</p>
+        </div>
       </div>
       <div>
-        <h2 className="subtitle">Première</h2>
-        <h3>{firstSpectacle}</h3>
+        <h3 className="title">A propos</h3>
+        <p>{content}</p>
       </div>
-    </div>
-    <div>
-      <h3 className="title text-center">A propos</h3>
-      <p>{content}</p>
     </div>
   </main>
 );

@@ -6,7 +6,6 @@ import Head from 'next/head';
 
 import SpectaclePage from '../../components/SpectaclePage';
 import Loader from '../../components/Loader';
-import Container from '../../components/container';
 import Layout from '../../components/layout';
 
 import { getSpectacleBySlug, getAllSpectaclesWithSlug } from '../../lib/api';
@@ -19,35 +18,33 @@ const Spectacle = ({ spectacle, preview }) => {
   }
   return (
     <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <Loader />
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>
-                  {spectacle.title} | Opéra de Paris
-                </title>
-                {/* <meta property="og:image" content={spectacle.ogImage.url} /> */}
-              </Head>
-              <SpectaclePage
-                id={spectacle.id}
-                title={spectacle.title}
-                location={spectacle.location.name}
-                lang={spectacle.lang.name}
-                content={spectacle.content}
-                image={spectacle.image}
-                credits={spectacle.credits}
-                fromDate={spectacle.fromDate}
-                toDate={spectacle.toDate}
-                time={spectacle.time}
-                firstSpectacle={spectacle.firstSpectacle}
-              />
-            </article>
-          </>
-        )}
-      </Container>
+      {router.isFallback ? (
+        <Loader />
+      ) : (
+        <>
+          <article>
+            <Head>
+              <title>
+                {spectacle.title} | Opéra de Paris
+              </title>
+              {/* <meta property="og:image" content={spectacle.ogImage.url} /> */}
+            </Head>
+            <SpectaclePage
+              id={spectacle.id}
+              title={spectacle.title}
+              location={spectacle.location.name}
+              lang={spectacle.lang.name}
+              content={spectacle.content}
+              image={spectacle.image}
+              credits={spectacle.credits}
+              fromDate={spectacle.fromDate}
+              toDate={spectacle.toDate}
+              time={spectacle.time}
+              firstSpectacle={spectacle.firstSpectacle}
+            />
+          </article>
+        </>
+      )}
     </Layout>
   );
 };

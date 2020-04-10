@@ -1,17 +1,16 @@
-import { useRouter } from 'next/router'
 import React from 'react';
 import { getAllSpectacles } from '../lib/api';
 
 import Layout from '../components/layout';
+import Container from '../components/container';
 import SpectaclesList from '../components/SpectaclesList';
 
 const Spectacles = ({ allSpectacles }) => {
-  console.log(allSpectacles);
-  const router = useRouter();
   return (
     <Layout>
+      <Container>
       <h2 className="title text-center">Représentations</h2>
-      <ul>
+      <ul className="md:flex md:flex-row md:justify-center md:w-full">
         {allSpectacles.map((spectacle) => (
           <SpectaclesList
             id={spectacle.id}
@@ -25,6 +24,7 @@ const Spectacles = ({ allSpectacles }) => {
           />
         ))}
       </ul>
+      </Container>
     </Layout>
   );
 };

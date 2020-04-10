@@ -6,21 +6,19 @@ import ArtistsList from '../components/ArtistsList';
 
 
 const Artists = ({ allArtists }) => {
-  const artist = allArtists[0];
-  console.log(allArtists);
   return (
     <Layout>
-    <ul className="flex flex-col justify-center md:justify-around md:flex-row ">
-      {allArtists.map((artist) => (
-        <ArtistsList
-          key={artist.id}
-          slug={artist.slug}
-          name={artist.name}
-          category={artist.category.name}
-          image={artist.image}
-        />      
-      ))}
-    </ul>
+      <ul className="flex flex-col justify-center mt-4 md:flex-row md:flex-wrap">
+        {allArtists.map((artist) => (
+          <ArtistsList
+            key={artist.id}
+            slug={artist.slug}
+            name={artist.name}
+            category={artist.category.name}
+            image={artist.image}
+          />
+        ))}
+      </ul>
     </Layout>
   );
 };
@@ -31,4 +29,4 @@ export async function getStaticProps({ preview }) {
   return {
     props: { allArtists },
   };
-};
+}
