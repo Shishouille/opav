@@ -14,8 +14,8 @@ const Header = () => {
             <div className="menu-bg">
               <Link href="/spectacles">
                 <a>
-                  <div className="bubble bubble-left">
-                    <div className="text-bubble">
+                  <div className="bubble md:md:b-desktop bubble-left">
+                    <div className="text-bubble md:b-desktop">
                       Spectacles
                     </div>
                   </div>
@@ -26,8 +26,8 @@ const Header = () => {
               </div> */}
               <Link href="/subscriptions">
                 <a>
-                  <div className="bubble bubble-right">
-                    <div className="text-bubble">
+                  <div className="bubble md:b-desktop bubble-right">
+                    <div className="text-bubble md:b-desktop">
                       Abonnements
                     </div>
                   </div>
@@ -44,8 +44,8 @@ const Header = () => {
             <div className="menu-bg">
               <Link href="/visits">
                 <a>
-                  <div className="bubble bubble-left">
-                    <div className="text-bubble">
+                  <div className="bubble md:b-desktop bubble-left">
+                    <div className="text-bubble md:b-desktop">
                       Visiter
                     </div>
                   </div>
@@ -56,8 +56,8 @@ const Header = () => {
               </div> */}
               <Link href="/artists">
                 <a>
-                  <div className="bubble bubble-right">
-                    <div className="text-bubble">
+                  <div className="bubble md:b-desktop bubble-right">
+                    <div className="text-bubble md:b-desktop">
                       Artistes
                     </div>
                   </div>
