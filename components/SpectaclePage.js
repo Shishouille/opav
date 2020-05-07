@@ -14,6 +14,8 @@ const SpectaclePage = ({
   toDate,
   time,
   firstSpectacle,
+  subscriptions,
+  subtitles,
 }) => (
   <main>
     <h2 className="title text-center">{title}</h2>
@@ -49,7 +51,11 @@ const SpectaclePage = ({
         </div>
         <div className="w-full">
           <h2 className="spectacle-subtitle border-b-2 border-black">Surtitrage</h2>
-          <p />
+          {subtitles.map((subtitle) => <p key={subtitle.name}>{subtitle.name}</p>)}
+        </div>
+        <div className="w-full">
+          <h2 className="spectacle-subtitle border-b-2 border-black">Abonnements</h2>
+          {subscriptions.map((subscription) => <p key={subscription.name}>{subscription.name}</p>)}
         </div>
         <div className="w-full">
           <h2 className="spectacle-subtitle border-b-2 border-black">Première</h2>

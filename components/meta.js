@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import HOME_OG_IMAGE_URL from '../public/images/image.jpg';
 
 export default function Meta() {
   return (
     <Head>
+      <title>Opav, profitez de l'opéra !</title>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -36,7 +36,7 @@ export default function Meta() {
         name="description"
         content="Démo NextJS + DatoCMS"
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image" content="https://www.datocms-assets.com/25425/1586521556-architecture-art-buildings-city-548094-edited.png" />
     </Head>
   );
 }

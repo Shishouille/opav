@@ -41,6 +41,8 @@ const Spectacle = ({ spectacle, preview }) => {
               toDate={spectacle.toDate}
               time={spectacle.time}
               firstSpectacle={spectacle.firstSpectacle}
+              subtitles={spectacle.subtitles}
+              subscriptions={spectacle.subscription}
             />
           </article>
         </>

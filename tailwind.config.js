@@ -65,10 +65,12 @@ module.exports = {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          borderBottom: '2px solid black',
+          borderBottom: '2px solid #3d0003',
           paddingBottom: '.4em',
           fontSize: '1.3em',
           paddingRight: '1em',
+          backgroundImage: 'linear-gradient(to right bottom, #ff6a4d, #ef5d46, #df503f, #d04238, #c03531, #b22c2c, #a32326, #951a21, #85151c, #751017, #650b12, #56070c)',
+          color: 'white',
         },
         '.nav-logo': {
           marginLeft: '.3em',
