@@ -6,7 +6,6 @@ import SubscriptionPage from '../components/SubscriptionPage';
 import { getAllSubscriptions } from '../lib/api';
 
 const Spectacles = ({ allSubscriptions }) => {
-  console.log(allSubscriptions);
   return (
     <Layout>
       <h2 className="artist-title title">Nos Abonnements</h2>

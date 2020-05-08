@@ -6,7 +6,6 @@ import VisitPage from '../components/VisitPage';
 import { getAllVisits } from '../lib/api';
 
 const Spectacles = ({ allVisits }) => {
-  console.log(allVisits);
   const [opera, changeOpera] = useState(false);
   const bastille = allVisits[0];
   const garnier = allVisits[1];

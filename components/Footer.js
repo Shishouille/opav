@@ -1,7 +1,7 @@
 
 export default function Footer() {
   return (
-    <div className="bg-accent-1 border-t border-accent-2 mt-10">
+    <div className="bg-accent-1 border-t border-accent-2">
       <footer className="footer-d">
         <div className="p-2 md:w-1/2">
           <h3 className="footer-title">

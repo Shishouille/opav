@@ -3,7 +3,7 @@ import Head from 'next/head';
 export default function Meta() {
   return (
     <Head>
-      <title>Opav, profitez de l'opéra !</title>
+      <title>Vive l'opéra</title>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -34,7 +34,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content="Démo NextJS + DatoCMS"
+        content="Petit site sur l'opéra - test NextJS + DatoCMS"
       />
       <meta property="og:image" content="https://www.datocms-assets.com/25425/1586521556-architecture-art-buildings-city-548094-edited.png" />
     </Head>

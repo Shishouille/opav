@@ -88,7 +88,7 @@ module.exports = {
           minHeight: '100vh',
         },
         '.layout-bg': {
-          backgroundColor: 'white',
+          backgroundColor: 'rgb(250, 250, 255)',
         },
       };
       addComponents(layout);
